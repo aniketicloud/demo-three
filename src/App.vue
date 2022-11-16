@@ -1,12 +1,37 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+    <h1>{{ title }}</h1>
+    <Input number="1" />
+    <Input number="2" />
+
+    <!-- <v-btn elevation="2"></v-btn> -->
+
+    <div>
+      {{ textOnScreen }}
+    </div>
   </div>
 </template>
+
+<script>
+import Input from "./components/Input.vue";
+
+export default {
+  name: "AppComponent",
+  data() {
+    return {
+      title: "Ciao Mondo",
+    };
+  },
+  components: {
+    Input,
+  },
+  computed: {
+    textOnScreen() {
+      return "hello";
+    },
+  },
+};
+</script>
 
 <style>
 #app {
@@ -29,4 +54,10 @@ nav a {
 nav a.router-link-exact-active {
   color: #42b983;
 }
+
+h1 {
+  color: red;
+}
 </style>
+
+// vue directives
